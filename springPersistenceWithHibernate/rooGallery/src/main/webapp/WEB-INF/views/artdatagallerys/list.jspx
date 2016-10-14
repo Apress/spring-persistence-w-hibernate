@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl:com.prospringhibernate.gallery.domain.ArtDataGallery" items="${artdatagallerys}" z="4Id7nyVmiW7tlyC7Lh1qUvl83nk=">
+        <table:table data="${artdatagallerys}" id="l:com.prospringhibernate.gallery.domain.ArtDataGallery" path="/artdatagallerys" z="R7kjq+MVyEbThrDvRGlb+pyGt7o=">
+            <table:column id="c:com.prospringhibernate.gallery.domain.ArtDataGallery.createDate" property="createDate" z="TVMPRJQWMAndOH33rEV3J56lkn0="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.ArtDataGallery.artEntities" property="artEntities" z="O2prc2P0g8fNPTF0x5GT5QYge/I="/>
+        <table:column id="c:com.prospringhibernate.gallery.domain.ArtDataGallery.file" property="file" z="fwbHIc2ACJFirKdxkUhV5QkJ+Zc="/>
+        </table:table>
+    </page:list>
+</div>

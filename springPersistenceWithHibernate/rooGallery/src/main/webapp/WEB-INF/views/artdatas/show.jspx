@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps:com.prospringhibernate.gallery.domain.ArtData" object="${artdata}" z="AVnnxmtguxaI20s+zLTMnnOYI6g=">
+        <field:display date="true" dateTimePattern="${artData_createdate_date_format}" field="createDate" id="s:com.prospringhibernate.gallery.domain.ArtData.createDate" object="${artdata}" z="gbsPyCLMNuOEfENILko7hX0PgUk="/>
+        <field:display field="artEntities" id="s:com.prospringhibernate.gallery.domain.ArtData.artEntities" object="${artdata}" z="hlgsU8N8/neti0K1Yhl+318ZTQw="/>
+    <field:display field="file" id="s:com.prospringhibernate.gallery.domain.ArtData.file" object="${artdata}" z="cFb/OWnJha75YPmwgyDyrwq7W2Y="/>
+    </page:show>
+</div>

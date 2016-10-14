@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl:com.prospringhibernate.gallery.domain.Exhibition" items="${exhibitions}" z="UqqCnz2y7kXssbvIiggS6ELBxFQ=">
+        <table:table data="${exhibitions}" id="l:com.prospringhibernate.gallery.domain.Exhibition" path="/exhibitions" z="8t4/+fu5y8CUdorRrZxHUwpmWQs=">
+            <table:column id="c:com.prospringhibernate.gallery.domain.Exhibition.name" property="name" z="tLmPDx6t8Qs5fnJxrtLDlLd19ks="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.Exhibition.description" property="description" z="qopTfROKZVJ6HT40Ny/s67xm63k="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.Exhibition.createDate" property="createDate" z="kTDFqcU10fnL+DaHs+NClHt5H3M="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.Exhibition.artEntities" property="artEntities" z="l/NTLyThV2p3uyz4PYooQa+cxzQ="/>
+        </table:table>
+    </page:list>
+</div>

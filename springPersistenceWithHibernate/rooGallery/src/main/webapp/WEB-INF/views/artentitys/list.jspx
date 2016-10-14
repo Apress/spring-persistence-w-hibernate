@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl:com.prospringhibernate.gallery.domain.ArtEntity" items="${artentitys}" z="k6LA+PdSMZAJsgkuw9cJkQAwdZE=">
+        <table:table data="${artentitys}" id="l:com.prospringhibernate.gallery.domain.ArtEntity" path="/artentitys" z="li1bD16YzXnb7RRzFVRJBQV0KYk=">
+            <table:column id="c:com.prospringhibernate.gallery.domain.ArtEntity.name" property="name" z="3n/nW91Aoh0R6GMJBijU+Ijl5MA="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.ArtEntity.title" property="title" z="3ScFQIZaCsDnlulkU+KYR/JVyXg="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.ArtEntity.subtitle" property="subtitle" z="RJiaGiGxknOWhdTv/LhoZ44PJr4="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.ArtEntity.description" property="description" z="mf8yMQi1UyKJsrfG6Ey2dgVdBvg="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.ArtEntity.caption" property="caption" z="R9m+5B7OgMxIb3nhrpnsZzAkhWw="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.ArtEntity.createDate" property="createDate" z="XhkqtW0ZNjaFWkKAhhHaz4cUM9w="/>
+        </table:table>
+    </page:list>
+</div>

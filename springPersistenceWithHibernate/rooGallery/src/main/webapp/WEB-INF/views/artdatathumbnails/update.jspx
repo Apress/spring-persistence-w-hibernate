@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu:com.prospringhibernate.gallery.domain.ArtDataThumbnail" modelAttribute="artDataThumbnail" path="/artdatathumbnails" z="Tq+vmDSJCi/Aqk+j0fxenPckPX0=">
+        <field:datetime dateTimePattern="${artDataThumbnail_createdate_date_format}" field="createDate" id="c:com.prospringhibernate.gallery.domain.ArtDataThumbnail.createDate" z="qipxwLZJ0vOmPXwSp8N2USOJlk8="/>
+        <field:select field="artEntities" id="c:com.prospringhibernate.gallery.domain.ArtDataThumbnail.artEntities" itemValue="id" items="${artentitys}" multiple="true" path="/artentitys" z="Aw7B59sPul7xHwhbuyPyuoTxzew="/>
+    <field:input field="file" id="c:com.prospringhibernate.gallery.domain.ArtDataThumbnail.file" z="h32fXGu03afYymqDN22BeltXDc8="/>
+    </form:update>
+</div>

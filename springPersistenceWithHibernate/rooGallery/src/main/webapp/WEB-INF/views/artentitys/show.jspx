@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps:com.prospringhibernate.gallery.domain.ArtEntity" object="${artentity}" z="wXas5vhg/YKUMva5tpUuWuNcwEQ=">
+        <field:display field="name" id="s:com.prospringhibernate.gallery.domain.ArtEntity.name" object="${artentity}" z="1GBITmQHidiTj7qXDLHZC/DmxPo="/>
+        <field:display field="title" id="s:com.prospringhibernate.gallery.domain.ArtEntity.title" object="${artentity}" z="m56KmDxS4wfCgSn+em4pygcKLag="/>
+        <field:display field="subtitle" id="s:com.prospringhibernate.gallery.domain.ArtEntity.subtitle" object="${artentity}" z="H5OFeSS86fYWxrIcDPW6J2D3ekk="/>
+        <field:display field="description" id="s:com.prospringhibernate.gallery.domain.ArtEntity.description" object="${artentity}" z="ucjLcpbS+0enao81h4UftbX7g00="/>
+        <field:display field="caption" id="s:com.prospringhibernate.gallery.domain.ArtEntity.caption" object="${artentity}" z="AVKzN3SmBtIWpHIx7OK3iiQ5JZE="/>
+        <field:display date="true" dateTimePattern="${artEntity_createdate_date_format}" field="createDate" id="s:com.prospringhibernate.gallery.domain.ArtEntity.createDate" object="${artentity}" z="KkS85gfNsPAItuPQjjJgmrQpHh0="/>
+        <field:display date="true" dateTimePattern="${artEntity_displaydate_date_format}" field="displayDate" id="s:com.prospringhibernate.gallery.domain.ArtEntity.displayDate" object="${artentity}" z="bsRiCDMr6ZtgPMzRka6/ruo5g/w="/>
+        <field:display field="categories" id="s:com.prospringhibernate.gallery.domain.ArtEntity.categories" object="${artentity}" z="UzTFo35+nL+SRTNkH211+lT6cUU="/>
+        <field:display field="tags" id="s:com.prospringhibernate.gallery.domain.ArtEntity.tags" object="${artentity}" z="VyAciUo8GWbdyE8XdPBX0LZhroY="/>
+    </page:show>
+</div>

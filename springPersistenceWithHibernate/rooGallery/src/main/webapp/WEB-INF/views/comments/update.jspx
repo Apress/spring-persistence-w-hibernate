@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu:com.prospringhibernate.gallery.domain.Comment" modelAttribute="comment" path="/comments" z="RUNJH50FXPdKHF7KN0uQ4ThhUD8=">
+        <field:textarea field="comment" id="c:com.prospringhibernate.gallery.domain.Comment.comment" required="true" z="fulIjwNC8GjLwWUVB3XOK3nsxgI="/>
+        <field:datetime dateTimePattern="${comment_createdate_date_format}" field="createDate" id="c:com.prospringhibernate.gallery.domain.Comment.createDate" z="yCzgyVITeBXPtr/6o2hphRrrmhA="/>
+        <field:select field="artEntity" id="c:com.prospringhibernate.gallery.domain.Comment.artEntity" itemValue="id" items="${artentitys}" path="/artentitys" z="zHmz+h9dhE3YMFw+9aKpTGmhi1c="/>
+    </form:update>
+</div>

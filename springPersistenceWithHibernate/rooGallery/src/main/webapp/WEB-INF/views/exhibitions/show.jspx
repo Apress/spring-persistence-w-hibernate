@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps:com.prospringhibernate.gallery.domain.Exhibition" object="${exhibition}" z="j2EWA1w5RMOfDOcEyxxmrwrqVL4=">
+        <field:display field="name" id="s:com.prospringhibernate.gallery.domain.Exhibition.name" object="${exhibition}" z="uhGFtWxrtXr17y7k7bET34s2ZGY="/>
+        <field:display field="description" id="s:com.prospringhibernate.gallery.domain.Exhibition.description" object="${exhibition}" z="z9tKl2WXmHYl/YLUBvmTYejtIn8="/>
+        <field:display date="true" dateTimePattern="${exhibition_createdate_date_format}" field="createDate" id="s:com.prospringhibernate.gallery.domain.Exhibition.createDate" object="${exhibition}" z="d4vgLw4hMtysI1/i64NMvQLkUkE="/>
+        <field:display field="artEntities" id="s:com.prospringhibernate.gallery.domain.Exhibition.artEntities" object="${exhibition}" z="8KI2ZsugPZmqkqSZzF5auxRuxdk="/>
+    </page:show>
+</div>

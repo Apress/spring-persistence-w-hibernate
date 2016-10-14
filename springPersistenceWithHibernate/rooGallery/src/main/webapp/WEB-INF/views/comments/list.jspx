@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl:com.prospringhibernate.gallery.domain.Comment" items="${comments}" z="7D1uZF2Kz82+h3GNkr/mXK1h+Fg=">
+        <table:table data="${comments}" id="l:com.prospringhibernate.gallery.domain.Comment" path="/comments" z="Cl7lRQelM2qOCH3spJzAn65fQQs=">
+            <table:column id="c:com.prospringhibernate.gallery.domain.Comment.comment" property="comment" z="mOXz1fu4TelXTZLXkh9ySrzMk7Y="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.Comment.createDate" property="createDate" z="T2T5S/celrAXDfiTsX2IUP04CUU="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.Comment.artEntity" property="artEntity" z="UCz8JRqgXttkDUw3DG0k2MOQ7uk="/>
+        </table:table>
+    </page:list>
+</div>

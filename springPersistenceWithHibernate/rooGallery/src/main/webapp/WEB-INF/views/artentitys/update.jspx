@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu:com.prospringhibernate.gallery.domain.ArtEntity" modelAttribute="artEntity" path="/artentitys" z="8iv+91js/LsVu1RXDvG8JXsU5Gc=">
+        <field:textarea field="name" id="c:com.prospringhibernate.gallery.domain.ArtEntity.name" required="true" z="EKFdySq8Tivaa6SWGafwpccMk28="/>
+        <field:textarea field="title" id="c:com.prospringhibernate.gallery.domain.ArtEntity.title" required="true" z="dgoLmcS27YHMBmkI1vnMdnpnbXQ="/>
+        <field:textarea field="subtitle" id="c:com.prospringhibernate.gallery.domain.ArtEntity.subtitle" required="true" z="AdHLiJ/HnQJwytaNmthvNfzSjPM="/>
+        <field:textarea field="description" id="c:com.prospringhibernate.gallery.domain.ArtEntity.description" required="true" z="vu8+VyRtzG4SanJ6T+np1x8fsbw="/>
+        <field:textarea field="caption" id="c:com.prospringhibernate.gallery.domain.ArtEntity.caption" required="true" z="AB9PZ0KEAKbY+IrJfqFXGnD+9pU="/>
+        <field:datetime dateTimePattern="${artEntity_createdate_date_format}" field="createDate" id="c:com.prospringhibernate.gallery.domain.ArtEntity.createDate" required="true" z="UrIU84HKOpy5D4jArHpOgh19HsQ="/>
+        <field:datetime dateTimePattern="${artEntity_displaydate_date_format}" field="displayDate" id="c:com.prospringhibernate.gallery.domain.ArtEntity.displayDate" z="Z5cY8Eu9/rs4+l/30qtUmundKgk="/>
+        <field:select field="categories" id="c:com.prospringhibernate.gallery.domain.ArtEntity.categories" itemValue="id" items="${categorys}" multiple="true" path="/categorys" z="xn4zG5fhdu+3fY2r6h5pfwqF0+c="/>
+        <field:select field="tags" id="c:com.prospringhibernate.gallery.domain.ArtEntity.tags" itemValue="id" items="${tags}" multiple="true" path="/tags" z="zTMOZiBl4AoMds21wTRT8NfpUZs="/>
+    </form:update>
+</div>

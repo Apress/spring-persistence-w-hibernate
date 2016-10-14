@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu:com.prospringhibernate.gallery.domain.Category" modelAttribute="category" path="/categorys" z="A7dqSmP53sUj7GSpZBljKuS8RRI=">
+        <field:textarea field="name" id="c:com.prospringhibernate.gallery.domain.Category.name" required="true" z="6qw7Ke9wlCjYkiIqEMU6QWMF7bc="/>
+        <field:textarea field="description" id="c:com.prospringhibernate.gallery.domain.Category.description" required="true" z="/t3zCcNQ778c+1PluVTT1V3XeaE="/>
+        <field:datetime dateTimePattern="${category_createdate_date_format}" field="createDate" id="c:com.prospringhibernate.gallery.domain.Category.createDate" z="JnV9J2vFtEq+zCZKw+m/tTCbhPg="/>
+        <field:select field="artEntities" id="c:com.prospringhibernate.gallery.domain.Category.artEntities" itemValue="id" items="${artentitys}" multiple="true" path="/artentitys" z="HjhG8PV3XsTLEPKDjMQXBzp5mIs="/>
+    </form:update>
+</div>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu:com.prospringhibernate.gallery.domain.Tag" modelAttribute="tag" path="/tags" z="ksNX+JW892pVP9bbvyxQ9Lv65l4=">
+        <field:input field="name" id="c:com.prospringhibernate.gallery.domain.Tag.name" max="25" required="true" z="b/Tvmg+KuAebNta5O8FzYXgqU3I="/>
+        <field:textarea field="description" id="c:com.prospringhibernate.gallery.domain.Tag.description" required="true" z="lm97kPsBA3OQrrZ/38vCZvCgonU="/>
+        <field:datetime dateTimePattern="${tag_createdate_date_format}" field="createDate" id="c:com.prospringhibernate.gallery.domain.Tag.createDate" z="88bv++YfXsLCVMSR20DAJfYSw0Q="/>
+        <field:select field="artEntities" id="c:com.prospringhibernate.gallery.domain.Tag.artEntities" itemValue="id" items="${artentitys}" multiple="true" path="/artentitys" z="I6iSA3bP0ncWX8nbO5pUHrwd948="/>
+    </form:update>
+</div>

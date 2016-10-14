@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl:com.prospringhibernate.gallery.domain.Category" items="${categorys}" z="FO/xwJUCWW6j7CQPAjlX93yOn2k=">
+        <table:table data="${categorys}" id="l:com.prospringhibernate.gallery.domain.Category" path="/categorys" z="DgAc1hXA0sSxifFU5J3MxVz2CkI=">
+            <table:column id="c:com.prospringhibernate.gallery.domain.Category.name" property="name" z="FDis6GEX4OC7aGkz0/fX549lWYI="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.Category.description" property="description" z="RJATNENC0TPqKa0VvFsoZUFBASw="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.Category.createDate" property="createDate" z="VdEJJJnbFJwhhkoJ81YybsND/tg="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.Category.artEntities" property="artEntities" z="zRoSpiznOUdDM0ce8WTcmDG7q1Q="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <!-- Listener to create the Spring Container shared by all Servlets and Filters -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:META-INF/spring/spring-master.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- Filter that binds a Hibernate Session to the thread for the entire processing of the request
+    <filter>
+        <filter-name>OpenSessionInViewFilter</filter-name>
+        <filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>OpenSessionInViewFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    -->
+
+    <!-- Filter that binds a JPA EntityManager to the thread for the entire processing of the request -->
+    <filter>
+        <filter-name>OpenEntityManagerInViewFilter</filter-name>
+        <filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>OpenEntityManagerInViewFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Spring DispatcherServlet for processing HTTP requests -->
+    <servlet>
+        <servlet-name>galleryDispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>WEB-INF/spring/spring-web-master.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>galleryDispatcher</servlet-name>
+        <url-pattern>*.art</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>galleryDispatcher</servlet-name>
+        <url-pattern>/art/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Index view mapping -->
+    <welcome-file-list>
+        <welcome-file>home.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>

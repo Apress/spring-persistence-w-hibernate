@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+	<jsp:output omit-xml-declaration="yes"/>
+
+<menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c:tags" name="Tags" z="ZXcBYReLJidZcThNNbRxuNZkiHI=">
+            <menu:item id="i:tags_tag" messageCode="global.menu.new" name="Tag" url="/tags?form" z="WXxRHsR8dNbbO/uM8eWd8Bdk3NE="/>
+        <menu:item id="i:tags_tags" messageCode="global.menu.list" name="Tags" url="/tags?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="YXVuzCIbXqUICkchbECWHIjvkSo="/>
+        </menu:category>
+    <menu:category id="c:comments" name="Comments" z="SOnmT/bffrwm7g0vnjhSXWRtKT0=">
+            <menu:item id="i:comments_comment" messageCode="global.menu.new" name="Comment" url="/comments?form" z="bnfzgIwdm1n/X+90+lqjYfwe3Ys="/>
+        <menu:item id="i:comments_comments" messageCode="global.menu.list" name="Comments" url="/comments?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="pX6Uh5OTRhMw4MDByrA2uTsaeNM="/>
+        </menu:category>
+    <menu:category id="c:artdatastorages" name="Artdatastorages" z="Sm2Uy6f0KxAqrpHnjxxHijro1rU=">
+            <menu:item id="i:artdatastorages_artdatastorage" messageCode="global.menu.new" name="ArtDataStorage" url="/artdatastorages?form" z="DgLCKAW4eESD5ZA9ZE2WlZJJdwI="/>
+        <menu:item id="i:artdatastorages_artdatastorages" messageCode="global.menu.list" name="ArtDataStorages" url="/artdatastorages?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="MdMMlRb6xeDke6uM7SmqTxIcaEQ="/>
+        </menu:category>
+    <menu:category id="c:artdatas" name="Artdatas" z="bjzXhHYoPMLSYTxr2PYnvIeleLs=">
+            <menu:item id="i:artdatas_artdata" messageCode="global.menu.new" name="ArtData" url="/artdatas?form" z="eejl+aX5AJgUeGF1WaQ9EkyI++0="/>
+        <menu:item id="i:artdatas_artdatas" messageCode="global.menu.list" name="ArtDatas" url="/artdatas?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="svaidZqaGJu3O/NMn7f8lbd44tE="/>
+        </menu:category>
+    <menu:category id="c:categorys" name="Categorys" z="RaM0vr7G4mkIiPtW1QWwCKs9nnM=">
+            <menu:item id="i:categorys_category" messageCode="global.menu.new" name="Category" url="/categorys?form" z="5Pcy7KFOGyDs3vEK5ZYnf5+hFM4="/>
+        <menu:item id="i:categorys_categorys" messageCode="global.menu.list" name="Categorys" url="/categorys?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="eERH/Hy07KWmHedDwFKtIa7X2nA="/>
+        </menu:category>
+    <menu:category id="c:exhibitions" name="Exhibitions" z="XOOkIxZq/0t2N7y6Ki/p7g4DgU0=">
+            <menu:item id="i:exhibitions_exhibition" messageCode="global.menu.new" name="Exhibition" url="/exhibitions?form" z="qPE9GIfZFMxSVqIgs9R1Js1W+I4="/>
+        <menu:item id="i:exhibitions_exhibitions" messageCode="global.menu.list" name="Exhibitions" url="/exhibitions?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="Ax9lHGXa6+azShjeBM8DADJSvXw="/>
+        </menu:category>
+    <menu:category id="c:artdatathumbnails" name="Artdatathumbnails" z="ql1b6eI/8MyQKcUNc57qkU89uJA=">
+            <menu:item id="i:artdatathumbnails_artdatathumbnail" messageCode="global.menu.new" name="ArtDataThumbnail" url="/artdatathumbnails?form" z="ekAOuN0bMkEXwHAqlVBgdcdzbZM="/>
+        <menu:item id="i:artdatathumbnails_artdatathumbnails" messageCode="global.menu.list" name="ArtDataThumbnails" url="/artdatathumbnails?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="YnxURLWztky8YBBaKZjdUjZSsNQ="/>
+        </menu:category>
+    <menu:category id="c:artentitys" name="Artentitys" z="8ph/yKtmUd7wXx+JPSUj8a3Huco=">
+            <menu:item id="i:artentitys_artentity" messageCode="global.menu.new" name="ArtEntity" url="/artentitys?form" z="hwql5Jue9y0+szJMTYzJzTVP/bc="/>
+        <menu:item id="i:artentitys_artentitys" messageCode="global.menu.list" name="ArtEntitys" url="/artentitys?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="S29tJbZ2c77kCHFQHYeJyOCA5Is="/>
+        </menu:category>
+    <menu:category id="c:artdatagallerys" name="Artdatagallerys" z="bb3jVtHANy+EqhlifshzoN1Dc6M=">
+            <menu:item id="i:artdatagallerys_artdatagallery" messageCode="global.menu.new" name="ArtDataGallery" url="/artdatagallerys?form" z="K704iSF8SAyc4/w+OYkmLA7YjZE="/>
+        <menu:item id="i:artdatagallerys_artdatagallerys" messageCode="global.menu.list" name="ArtDataGallerys" url="/artdatagallerys?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="tr4Uqba8H5GMwPI2binSxZpx9QU="/>
+        </menu:category>
+    <menu:category id="c:people" name="People" z="IunxsYfJn8CpwQNL4ltv4wGMrtI=">
+            <menu:item id="i:people_person" messageCode="global.menu.new" name="Person" url="/people?form" z="Sd6f7AiMjSHUzpPtjAFEq6gvzRg="/>
+        <menu:item id="i:people_people" messageCode="global.menu.list" name="People" url="/people?page=${empty param.page ? 1 : param.page}&amp;size=${empty param.size ? 10 : param.size}" z="d9hnz3xc7Dj1P4SGJM1HJ0jXs9w="/>
+        </menu:category>
+    </menu:menu>
+</div>

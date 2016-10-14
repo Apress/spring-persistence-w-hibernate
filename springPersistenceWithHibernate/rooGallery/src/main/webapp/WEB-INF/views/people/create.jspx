@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc:com.prospringhibernate.gallery.domain.Person" modelAttribute="person" path="/people" render="${empty dependencies}" z="pGbUWdx4TIYYgZ2/9OmTKQt6Z+I=">
+        <field:input field="email" id="c:com.prospringhibernate.gallery.domain.Person.email" required="true" validationMessageCode="field.invalid.email" validationRegex="[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}" z="ErxEL1jcIXQD+74HnOAVODZ1z04="/>
+        <field:input field="password" id="c:com.prospringhibernate.gallery.domain.Person.password" required="true" z="IDEEIwBkFIL27DzKnbWJNh2goaI="/>
+        <field:input field="displayName" id="c:com.prospringhibernate.gallery.domain.Person.displayName" max="15" min="3" required="true" z="1MH9YTCplDAZ3JyVwS0ZHCMdhK0="/>
+        <field:datetime dateTimePattern="${person_createdate_date_format}" field="createDate" id="c:com.prospringhibernate.gallery.domain.Person.createDate" required="true" z="Is7LqOjEIeDUl8HNFHkHlBR3YSo="/>
+        <field:select field="roleLevel" id="c:com.prospringhibernate.gallery.domain.Person.roleLevel" items="${rolelevels}" path="rolelevels" z="NBvOvRqNvY0u4ztqk1+FNUL5DEQ="/>
+    </form:create>
+    <form:page id="fs:com.prospringhibernate.gallery.domain.Person" render="${not empty dependencies}" title="Person" z="YlVXqYv4Rk+cMuDDSePt8MfwKa0=">
+        <spring:message code="entity.dependency.required"/>
+        <c:forEach items="${dependencies}" var="dependency">
+            <p>
+                <field:reference field="${dependency[0]}" id="s:com.prospringhibernate.gallery.domain.Person.${dependency[0]}" path="/${dependency[1]}" z="IdG/Kitu7koQGo2B97KJvEbPj6U="/>
+            </p>
+        </c:forEach>
+    </form:page>
+</div>

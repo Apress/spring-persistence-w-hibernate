@@ -1,0 +1,219 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"><value>org.springframework.web.servlet.view.JstlView</value></property>
+        <property name="prefix"><value>/WEB-INF/JSP/</value></property>
+        <property name="suffix"><value>.jsp</value></property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="mediaTypes">
+            <map>
+                <entry key="xml" value="application/xml"/>
+                <entry key="html" value="text/html"/>
+            </map>
+        </property>
+        <property name="viewResolvers">
+            <list>
+                <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+                <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+                    <property name="prefix">
+                        <value>/WEB-INF/JSP/</value>
+                    </property>
+                    <property name="suffix">
+                        <value>.jsp</value>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- one of the properties available; the maximum file size in bytes -->
+        <property name="maxUploadSize">
+            <value>5000000</value>
+        </property>
+    </bean>
+
+    <context:component-scan base-package="com.prospringhibernate.gallery.restapi"/>
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+
+    <!--
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+    --> 
+
+    <bean id="jaxbView" class="org.springframework.web.servlet.view.xml.MarshallingView">
+        <constructor-arg ref="jaxbMarshaller"/>
+    </bean>
+
+    <!-- JAXB2 marshaller. Automagically turns beans into xml -->
+    <bean id="jaxbMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+        <property name="classesToBeBound">
+            <list>
+                <value>com.prospringhibernate.gallery.dto.ArtEntityDTO</value>
+                <value>com.prospringhibernate.gallery.dto.CategoryDTO</value>
+                <value>com.prospringhibernate.gallery.dto.CommentDTO</value>
+                <value>com.prospringhibernate.gallery.dto.ExhibitionDTO</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="insecureHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="interceptors">
+            <list>
+
+            </list>
+        </property>
+        <property name="urlMap">
+            <map>
+                <entry key="**/selectCategory.art">
+                    <ref local="selectCategoryController"/>
+                </entry>
+                <entry key="**/login.art">
+                    <ref local="loginController"/>
+                </entry>
+                <!--<entry key="**/selectExhibition.art"><ref local="selectExhibitionController"/></entry>-->
+                <entry key="**/selectArt.art">
+                    <ref local="selectArtController"/>
+                </entry>
+                <entry key="**/viewCategories.art">
+                    <ref local="viewCategoriesController"/>
+                </entry>
+                <!--<entry key="**/viewExhibitions.art"><ref local="viewExhibitionController"/></entry>-->
+                <entry key="**/displayImage.art">
+                    <ref local="displayImageController"/>
+                </entry>
+                <entry key="**/logOut.art">
+                    <ref local="logOutController"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="secureHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="interceptors">
+            <list>
+
+            </list>
+        </property>
+        <property name="urlMap">
+            <map>
+                <entry key="**/uploadArt.art">
+                    <ref local="uploadArtController"/>
+                </entry>
+                <entry key="**/createExhibition.art">
+                    <ref local="createExhibitController"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- ################### Controllers  ############################ -->
+    <!--  Controller for the Login Form -->
+
+    <bean id="loginController" class="com.prospringhibernate.gallery.controller.LoginController">
+        <property name="artworkFacade">
+            <ref bean="artworkFacade"/>
+        </property>
+        <property name="formView">
+            <value>admin_login</value>
+        </property>
+        <property name="successView">
+            <value>admin_menu</value>
+        </property>
+    </bean>
+
+    <bean id="createExhibitController" class="com.prospringhibernate.gallery.controller.CreateExhibitController">
+        <property name="artworkFacade">
+            <ref bean="artworkFacade"/>
+        </property>
+        <property name="formView">
+            <value>admin_createexhib</value>
+        </property>
+        <property name="successView">
+            <value>admin_createexhibSuccess</value>
+        </property>
+    </bean>
+
+    <bean id="viewCategoriesController" class="com.prospringhibernate.gallery.controller.ViewCategoriesController">
+        <property name="artworkFacade">
+            <ref bean="artworkFacade"/>
+        </property>
+        <property name="successView">
+            <value>viewcategories</value>
+        </property>
+    </bean>
+
+    <bean id="selectCategoryController" class="com.prospringhibernate.gallery.controller.SelectCategoryController">
+        <property name="artworkFacade">
+            <ref bean="artworkFacade"/>
+        </property>
+        <property name="formView">
+            <value>viewcategories</value>
+        </property>
+        <property name="successView">
+            <value>viewart</value>
+        </property>
+    </bean>
+
+    <bean id="displayImageController" class="com.prospringhibernate.gallery.controller.DisplayImageController">
+        <property name="artworkFacade">
+            <ref bean="artworkFacade"/>
+        </property>
+    </bean>
+
+    <bean id="selectArtController" class="com.prospringhibernate.gallery.controller.SelectArtController">
+        <property name="artworkFacade">
+            <ref bean="artworkFacade"/>
+        </property>
+        <property name="formView">
+            <value>viewcategories</value>
+        </property>
+        <property name="successView">
+            <value>viewart</value>
+        </property>
+    </bean>
+
+    <bean id="logOutController" class="com.prospringhibernate.gallery.controller.LogOutController">
+        <property name="artworkFacade">
+            <ref bean="artworkFacade"/>
+        </property>
+        <property name="successView">
+            <value>home</value>
+        </property>
+    </bean>
+
+    <bean id="uploadArtController" class="com.prospringhibernate.gallery.controller.UploadArtController">
+        <property name="artworkFacade">
+            <ref bean="artworkFacade"/>
+        </property>
+        <property name="commandClass">
+            <value>com.prospringhibernate.gallery.domain.ArtEntity</value>
+        </property>
+        <property name="commandName">
+            <value>artentity</value>
+        </property>
+        <property name="sessionForm">
+            <value>false</value>
+        </property>
+        <property name="formView">
+            <value>admin_upload</value>
+        </property>
+        <property name="successView">
+            <value>admin_success</value>
+        </property>
+        <!--<property name="validator"><ref local="loginValidator"/></property>-->
+    </bean>
+
+</beans>

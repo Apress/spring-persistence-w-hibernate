@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+    <!-- Hibernate SessionFactory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"
+          p:dataSource-ref="galleryDataSource"
+          p:lobHandler-ref="defaultLobHandler">
+        <property name="annotatedClasses">
+            <list>
+                <value>com.prospringhibernate.gallery.domain.ArtData</value>
+                <value>com.prospringhibernate.gallery.domain.ArtData_Gallery</value>
+                <value>com.prospringhibernate.gallery.domain.ArtData_Storage</value>
+                <value>com.prospringhibernate.gallery.domain.ArtData_Thumbnail</value>
+                <value>com.prospringhibernate.gallery.domain.ArtEntity</value>
+                <value>com.prospringhibernate.gallery.domain.Category</value>
+                <value>com.prospringhibernate.gallery.domain.Comment</value>
+                <value>com.prospringhibernate.gallery.domain.Exhibition</value>
+                <value>com.prospringhibernate.gallery.domain.Person</value>
+            </list>
+        </property>
+
+        <property name="hibernateProperties">
+            <value>
+                <!--hibernate.dialect=${hibernate.dialect}-->
+                hibernate.jdbc.batch_size=${hibernate.jdbc.batch_size}
+                hibernate.c3p0.max_size=${hibernate.c3p0.max_size}
+                hibernate.c3p0.min_size=${hibernate.c3p0.min_size}
+                hibernate.c3p0.timeout=${hibernate.c3p0.timeout}
+                hibernate.c3p0.max_statements=${hibernate.c3p0.max_statements}
+                hibernate.c3p0.idle_test_period=${hibernate.c3p0.idle_test_period}
+                hibernate.c3p0.acquire_increment=${hibernate.c3p0.acquire_increment}
+                hibernate.c3p0.validate=${hibernate.c3p0.validate}
+                hibernate.cache.provider_class=${hibernate.cache.provider_class}
+                hibernate.connection.provider_class=${hibernate.connection.provider_class}
+                hibernate.show_sql=${hibernate.show_sql}
+                hibernate.hbm2ddl.auto=update
+                hibernate.cache.use_second_level_cache=true
+                hibernate.cache.use_query_cache=true
+                hibernate.search.default.directory_provider=${hibernate.search.default.directory_provider}
+                hibernate.search.default.indexBase=${hibernate.search.default.indexBase}
+                hibernate.search.default.batch.merge_factor=${hibernate.search.default.batch.merge_factor}
+                hibernate.search.default.batch.max_buffered_docs=${hibernate.search.default.batch.max_buffered_docs}
+            </value>
+        </property>
+    </bean>
+
+    <!-- Database LOB Handling -->
+    <bean id="defaultLobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler"/>
+
+    <!-- Read in DAOs from the hibernate package -->
+    <context:component-scan base-package="com.prospringhibernate.gallery.dao.hibernate"/>
+
+    <!-- Transaction Config -->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+          p:sessionFactory-ref="sessionFactory"/>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+</beans>

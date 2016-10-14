@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl:com.prospringhibernate.gallery.domain.Person" items="${people}" z="s4eiRSnhDHciUXpLefwA/AAcnTI=">
+        <table:table data="${people}" id="l:com.prospringhibernate.gallery.domain.Person" path="/people" z="xZLCQ6Sy1MIbOPYg41Jp6XtH+RY=">
+            <table:column id="c:com.prospringhibernate.gallery.domain.Person.email" property="email" z="ByHvkEymholHoDDUTYydDcmspQA="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.Person.password" property="password" z="xRKrRTEmQtVR9JqbnrI+2RXGpIs="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.Person.displayName" property="displayName" z="aHluq+BlN5cNule/YEKVNbHbcQc="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.Person.createDate" property="createDate" z="XliKX9SgaTYAbEFVsCnxcY6R2Aw="/>
+            <table:column id="c:com.prospringhibernate.gallery.domain.Person.roleLevel" property="roleLevel" z="nVbSVqkGWSrdSNq9pTNg6F42/0Y="/>
+        </table:table>
+    </page:list>
+</div>

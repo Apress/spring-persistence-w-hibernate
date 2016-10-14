@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps:com.prospringhibernate.gallery.domain.Person" object="${person}" z="dqsvDBcZU+FOvjJKEFmiIh+pjt0=">
+        <field:display field="email" id="s:com.prospringhibernate.gallery.domain.Person.email" object="${person}" z="Il3lBOLW9wMkEoTOEZ8UnvXw+4w="/>
+        <field:display field="password" id="s:com.prospringhibernate.gallery.domain.Person.password" object="${person}" z="ib6QCrAwnPq9J8KpWbTygDEaL/U="/>
+        <field:display field="displayName" id="s:com.prospringhibernate.gallery.domain.Person.displayName" object="${person}" z="B2Jp+7aKj16eAv4BWlmYaXmbsEI="/>
+        <field:display date="true" dateTimePattern="${person_createdate_date_format}" field="createDate" id="s:com.prospringhibernate.gallery.domain.Person.createDate" object="${person}" z="8NDtAq+zJAxpVAWc2+BnNIXuaq0="/>
+        <field:display field="roleLevel" id="s:com.prospringhibernate.gallery.domain.Person.roleLevel" object="${person}" z="969Tx9/SDArbq8ukPLsEy/YcwoE="/>
+    </page:show>
+</div>
